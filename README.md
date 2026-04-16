@@ -112,7 +112,7 @@ Opstree1/
 
 * **Admin**: [admin@gmail.com](mailto:admin@gmail.com)
 * **Manager**: [mgr@gmail.com](mailto:mgr@gmail.com)
-* **Employee**: [rogerrene1997@gmail.com](mailto:rogerrene1997@gmail.com)
+* **Employee**: [riya@example.com](mailto:riya@example.com)
 * **Password (all users)**: 123
 
 ---
