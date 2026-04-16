@@ -1,0 +1,216 @@
+/* Premium SaaS UI - Glassmorphism, Minimal Elements & Smooth Animations */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+    background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    font-size: 15px; 
+    color: #334155;
+    min-height: 100vh;
+}
+
+/* Glassmorphism Header */
+.navbar {
+    background-color: rgba(15, 23, 42, 0.85) !important;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar-brand span {
+    color: #ffffff !important;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 0.5px;
+}
+
+.navbar .text-primary {
+    color: #38bdf8 !important;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Soft Cards (Widgets) */
+.card {
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.04), 0 4px 6px -2px rgba(0, 0, 0, 0.02);
+    margin-bottom: 30px;
+    background-color: #ffffff;
+    transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    opacity: 0; /* Starts hidden for animation */
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.06), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+}
+
+.card-header {
+    background-color: transparent !important;
+    border-bottom: 1px solid #f1f5f9 !important;
+    font-weight: 700;
+    font-size: 15px;
+    padding: 20px 24px;
+    border-radius: 12px 12px 0 0 !important;
+    letter-spacing: 0.5px;
+    color: #0f172a;
+}
+
+/* Section titles in card bodies */
+.card-body h5 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    border-bottom: 2px solid #f1f5f9;
+    padding-bottom: 16px;
+    margin-bottom: 24px;
+    letter-spacing: 0.5px;
+}
+
+/* Sub-titles */
+.card-body h6 {
+    font-size: 15px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 12px;
+}
+
+/* Clean Tables */
+.table {
+    margin-bottom: 0;
+    font-size: 14.5px;
+}
+
+.table th {
+    background-color: #f8fafc !important;
+    color: #475569;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid #e2e8f0 !important;
+    border-top: none !important;
+    padding: 14px 16px;
+    text-transform: uppercase;
+}
+
+.table td {
+    color: #334155;
+    padding: 16px 16px;
+    border-color: #f1f5f9;
+    vertical-align: middle;
+}
+
+.table-hover tbody tr {
+    transition: background-color 0.2s ease;
+}
+.table-hover tbody tr:hover td {
+    background-color: #f8fafc;
+}
+
+/* Scaled Enterprise Badges */
+.badge {
+    font-weight: 600;
+    font-size: 12.5px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    letter-spacing: 0.3px;
+}
+
+.bg-success { background-color: #dcfce7 !important; color: #166534 !important; border: 1px solid #22c55e; }
+.bg-primary { background-color: #dbeafe !important; color: #1e40af !important; border: 1px solid #3b82f6; }
+.bg-warning { background-color: #fef9c3 !important; color: #854d0e !important; border: 1px solid #eab308; }
+.bg-danger { background-color: #fee2e2 !important; color: #991b1b !important; border: 1px solid #ef4444; }
+.bg-secondary { background-color: #f1f5f9 !important; color: #334155 !important; border: 1px solid #94a3b8; }
+.bg-dark { background-color: #e2e8f0 !important; color: #0f172a !important; border: 1px solid #64748b; }
+
+/* Micro-interaction Buttons */
+.btn {
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
+    padding: 8px 18px;
+    transition: all 0.25s ease;
+}
+
+.btn:active {
+    transform: scale(0.96);
+}
+
+.btn-primary { background-color: #2563eb; border-color: #2563eb; box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2); }
+.btn-primary:hover { background-color: #1d4ed8; border-color: #1d4ed8; box-shadow: 0 6px 12px -2px rgba(37, 99, 235, 0.3); transform: translateY(-1px); }
+
+.btn-success { background-color: #10b981; border-color: #10b981; box-shadow: 0 4px 6px -1px rgba(16, 185, 129, 0.2); }
+.btn-success:hover { background-color: #059669; border-color: #059669; box-shadow: 0 6px 12px -2px rgba(16, 185, 129, 0.3); transform: translateY(-1px); }
+
+.btn-danger { background-color: #ef4444; border-color: #ef4444; box-shadow: 0 4px 6px -1px rgba(239, 68, 68, 0.2); }
+.btn-danger:hover { background-color: #dc2626; border-color: #dc2626; box-shadow: 0 6px 12px -2px rgba(239, 68, 68, 0.3); transform: translateY(-1px); }
+
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 13px;
+}
+
+/* Nav Sub-buttons */
+.navbar .btn-outline-danger {
+    color: #fca5a5;
+    border-color: rgba(239, 68, 68, 0.4);
+    border-radius: 8px;
+    padding: 6px 16px;
+    font-weight: 600;
+}
+.navbar .btn-outline-danger:hover {
+    background-color: #ef4444;
+    border-color: #ef4444;
+    color: white;
+}
+
+/* Polished Inputs */
+.form-control, .form-select {
+    font-size: 14.5px;
+    border-radius: 8px;
+    border-color: #cbd5e1;
+    padding: 10px 14px;
+    background-color: #f8fafc;
+    transition: all 0.25s ease;
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: #ffffff;
+    border-color: #3b82f6;
+    box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.12);
+}
+
+.form-label {
+    font-size: 14px;
+    font-weight: 600;
+    color: #475569;
+    margin-bottom: 6px;
+}
+
+/* Keyframes */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Animation Cascade (Staggering) */
+.container > *:nth-child(1) { animation-delay: 0.0s; }
+.container > *:nth-child(2) { animation-delay: 0.1s; }
+.container > *:nth-child(3) { animation-delay: 0.2s; }
+.container > *:nth-child(4) { animation-delay: 0.3s; }
+.container > *:nth-child(5) { animation-delay: 0.4s; }
