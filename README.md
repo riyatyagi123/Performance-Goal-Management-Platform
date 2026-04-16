@@ -1,102 +1,175 @@
-# Enterprise Performance Management System (PMS)
+# 🚀 Enterprise Performance Management System (PMS)
 
-Welcome to the **Performance Management System (PMS)** — a centralized, role-based web application built to streamline goal tracking, probation monitoring, and employee performance reviews.
+The **Performance Management System (PMS)** is a centralized, role-based web application designed to streamline employee goal tracking, probation monitoring, and performance evaluations within an organization.
 
-## 🚀 Overview
+---
 
-The PMS platform is designed to replace fragmented spreadsheets and informal email threads with automated workflows and real-time dashboards. It serves three distinct roles with tailored experiences:
-- **Employees**: Set goals, submit self-assessments, and track their probation timelines.
-- **Managers**: Assign goals, review team performance, approve pending tasks, and provide structured feedback.
-- **Administrators**: Oversee the entire organization, manage the user repository ("People Management"), track aggregate performance scores, and handle system escalations.
+## 🌐 Live Deployment
+
+The application is deployed on Render:
+
+**URL:** https://pms-system.onrender.com
+
+---
+
+## 📌 Overview
+
+The PMS platform replaces manual processes such as spreadsheets and email-based tracking with an integrated system that provides structured workflows, real-time dashboards, and role-specific functionality.
+
+### User Roles
+
+* **Employee**
+
+  * Define and manage individual goals
+  * Submit self-assessments
+  * Track probation progress
+
+* **Manager**
+
+  * Assign and evaluate goals
+  * Review employee performance
+  * Provide structured feedback
+
+* **Administrator**
+
+  * Manage users and organizational data
+  * Monitor system-wide performance metrics
+  * Handle escalations and moderation
+
+---
 
 ## 🛠️ Technology Stack
-- **Backend**: Python, Flask
-- **Database**: SQLite (`database.db`)
-- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5.3
-- **Icons & UI**: FontAwesome 6, Glassmorphic / Premium SaaS Design framework
+
+* **Backend:** Python, Flask
+* **Frontend:** HTML, CSS, JavaScript, Bootstrap
+* **Database:** SQLite
+* **Server:** Gunicorn
+* **Deployment:** Render
+
+---
 
 ## ✨ Key Features
 
-1. **Role-based Authentication**: Secure, distinct dashboards for Employees, Managers, and Admins.
-2. **Goal Management System (GMS)**: Assign, track, and update dynamic goals with weightage-based progression.
-3. **Automated Review Cycles**: Dedicated tracking for Bi-Annual and Quarterly performance review tracks.
-4. **Probation Monitoring**: 30/60/80-day automated staggered checkpoint reviews for new hires.
-5. **Real-time Email Emulation**: Background jobs and dynamic scheduler simulating automated email notifications right on the dashboard.
-6. **Escalation Center**: Admins can flag toxic/unprofessional feedback and gracefully escalate delayed manager responses.
-7. **Premium "People Management" Module**: Instantly Add/Remove users with cascading data deletion ensuring database integrity.
+* Role-based authentication and access control
+* Goal Management System with weighted tracking
+* Automated review cycles (quarterly and bi-annual)
+* Probation monitoring with staged checkpoints (30/60/80 days)
+* Scheduler-driven notification simulation
+* Escalation system for delayed or inappropriate feedback
+* Administrative “People Management” module
+
+---
 
 ## 📁 Project Structure
 
-```
+```id="z1vlx1"
 Opstree1/
 │
-├── app.py                  # Main Flask application initialization and configuration
-├── database.py             # Database connection wrapper and queries
-├── init_db.py              # Schema definition and database seeding script
-├── scheduler.py            # Background operations (email automation/escalation triggers)
-├── utils.py                # Helper functions for calculation and data processing
+├── app.py
+├── database.py
+├── init_db.py
+├── scheduler.py
+├── utils.py
 │
-├── routes/                 # Separated route blueprints for modularity
-│   ├── auth.py             # Login, Logout logic
-│   ├── employee.py         # Employee dashboard actions
-│   ├── manager.py          # Manager dashboard logic
-│   └── admin.py            # Admin logic & People Management
+├── routes/
+│   ├── auth.py
+│   ├── employee.py
+│   ├── manager.py
+│   └── admin.py
 │
-├── templates/              # HTML standard templates (Jinja2)
-│   ├── login.html
-│   ├── employee.html
-│   ├── manager.html
-│   ├── admin.html
-│   └── admin_users.html    # People Management Grid 
-│
-└── static/                 # CSS/JS and Images
-    └── custom.css          # Core SaaS Aesthetic Style Overrides
+├── templates/
+├── static/
+├── requirements.txt
+└── .gitignore
 ```
 
-## ⚙️ How to Setup and Run
+---
 
-1. **Prerequisites**
-   Ensure you have Python 3.x installed. 
-   
-2. **Install Dependencies**
-   ```bash
-   pip install flask
-   # Install any other requirements defined in your environment
-   ```
+## ⚙️ Local Setup
 
-3. **Initialize the Database**
-   Before running the application for the first time, or to reset your environment, you must build the database schema and seed the initial users:
-   ```bash
-   python init_db.py
-   ```
-   *Note: This will drop existing tables and recreate them with Sample Users.*
+### 1. Clone the Repository
 
-4. **Run the Application**
-   ```bash
-   python app.py
-   ```
-   The server will start on `http://127.0.0.1:5000` (or `localhost:5000`).
+```bash id="4mbf7g"
+git clone https://github.com/riyatyagi123/Performance-Goal-Management-Platform.git
+cd Performance-Goal-Management-Platform
+```
 
-5. **Run the Scheduler (Optional)**
-   To test the automated email triggers for probation cycles and escalations, run the scheduler script in a separate terminal:
-   ```bash
-   python scheduler.py
-   ```
+### 2. Install Dependencies
+
+```bash id="p1qnbh"
+pip install -r requirements.txt
+```
+
+### 3. Initialize Database
+
+```bash id="uv61pa"
+python init_db.py
+```
+
+### 4. Run Application
+
+```bash id="d4a8pt"
+python app.py
+```
+
+Access the application at:
+http://127.0.0.1:5000
+
+---
+
+## ☁️ Deployment Configuration
+
+This application is configured for deployment on Render.
+
+**Build Command**
+
+```bash id="4qczlm"
+pip install -r requirements.txt
+```
+
+**Start Command**
+
+```bash id="q0n6k8"
+python init_db.py && gunicorn app:app
+```
+
+---
 
 ## 🔐 Demo Credentials
 
-Running `init_db.py` creates the following default accounts. Use the password `123` for all of them:
-
-- **Admin**: `admin@gmail.com`
-- **Manager**: `mgr@gmail.com`
-- **Employee**: `rogerrene1997@gmail.com`
-
-## 🎨 Design Philosophy
-The system prioritizes a **Premium SaaS aesthetic**:
-- Fully responsive Bootstrap grids.
-- Soft shadow layers (`shadow-sm`) over bright interfaces prioritizing ample whitespace.
-- Dropdown utility menus embedded cohesively into a dark navy header (`#2b303a`).
-- Rounded UI buttons and actionable color palettes (Blue for primary actions, Red for alerts/deletions).
+| Role     | Email                                                     | Password |
+| -------- | --------------------------------------------------------- | -------- |
+| Admin    | [admin@gmail.com](mailto:admin@gmail.com)                 | 123      |
+| Manager  | [mgr@gmail.com](mailto:mgr@gmail.com)                     | 123      |
+| Employee | [rogerrene1997@gmail.com](mailto:rogerrene1997@gmail.com) | 123      |
 
 ---
-*Built for modern workforce management.*
+
+## ⚠️ Notes
+
+* The application uses SQLite for simplicity and demonstration purposes
+* On Render’s free tier, the database is ephemeral and resets on redeploy
+* For production use, a persistent database such as PostgreSQL is recommended
+
+---
+
+## 🚀 Future Enhancements
+
+* Migration to PostgreSQL for persistent storage
+* Integration of real email services (SMTP)
+* Token-based authentication (JWT)
+* Advanced analytics and reporting dashboards
+* Modular microservices architecture
+
+---
+
+## 👩‍💻 Author
+
+Riya Tyagi
+B.Tech Computer Science Engineering
+
+---
+
+## 📄 License
+
+This project is developed for academic and demonstration purposes.
