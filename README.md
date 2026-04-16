@@ -8,8 +8,7 @@ The **Performance Management System (PMS)** is a centralized, role-based web app
 
 The application is deployed on Render:
 
-**URL:** https://pms-system.onrender.com
-
+**URL:** 
 ---
 
 ## 📌 Overview
